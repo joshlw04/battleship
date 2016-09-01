@@ -1,0 +1,49 @@
+#game-board {
+  height: 6rem;
+  width: 6rem;
+}
+
+.hit {
+  background-image: url('images/explosion.gif');
+  background-size: 3rem 3rem;
+}
+
+.miss {
+  background-image: url('images/splash.png');
+  background-size: 3rem 3rem;
+}
+
+.hidden {
+  background-image: none;
+}
+
+div {
+  height: 5rem;
+  width: 5rem;
+  border: 1px solid black;
+  text-align: center;
+  display: inline-block;
+}
+
+.board {
+  width: 70%;
+  height: 30rem;
+  background-color: lightblue;
+  margin: 0 auto;
+  position: absolute;
+}
+
+#game-board {
+  height: 20rem;
+  width: 20rem;
+  background-color: lightgreen;
+}
+
+#game-cell {
+  height: 16%;
+  width: 16%;
+  display: inline-block;
+  position: relative;
+  margin: 1%;
+  text-align: center;
+}
