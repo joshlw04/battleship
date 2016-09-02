@@ -29,8 +29,7 @@ class Board {
   isGameOver() {
     let gameOver;
     for (let i = 0; i < this.cellsInBoard.length; i++) { // loop over all cells in the gameBoard
-      if (this.cellsInBoard[i].hasBoat === true) { // if the cell has a boat... how do i reach that from here?
-         // because this isnt working...
+      if (this.cellsInBoard[i].hasBoat === true) {
         if (this.cellsInBoard[i].beenPlayed && this.cellsInBoard[i].isExplosion) { // if the cell has been played and has been exploded...
           gameOver = true;
         }
@@ -40,9 +39,11 @@ class Board {
     }
     return gameOver;
   }
-/*^^^^^^pretty sure this syntax isnt right. or the logic. prob both.
 
-      in this fucntion... check if ALL Cells WITH a boat... have exploded..
+  alertWinner() {
+    // this will tell the player that they have found all the ships
+  }
+  /*    in this fucntion... check if ALL Cells WITH a boat... have exploded..
   Looping over ALL the cells... the cellsInBoard array, which has all the new Cell objects
     checking if the cell has a boat...
       if is does... has it been played?
