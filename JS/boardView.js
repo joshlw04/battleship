@@ -1,38 +1,41 @@
+// the plastic... what does the game board LOOK like
 class BoardView {
   constructor(domBoard, board) {
     this.el = domBoard;
     this.board = board;
   }
 
-  setCellClickEventHandler(cellNode) {
-    cellNode.addEventListener('click', (e) => {
-      let className = e.target.getAttribute('class');
-      className = className.replace('hidden', '');
-      e.target.setAttribute('class', className);
-    });
-  }
-
   render() {
     this.el.innerHTML = '';
     const gameBoard = document.createElement('div');
     gameBoard.setAttribute('id', 'game-board');
-    this.el.appendChild(gameBoard);
 
-    let node;
-    this.board.gameStateArray.forEach((cell) => {
-      node = document.createElement('div');
-      node.setAttribute('class', cell);
-      node.setAttribute('id', 'game-cell');
-      // will more like..   cell.isShip()    which returns... true or false
-      if (node.getAttribute('class') === '0') {
-        node.setAttribute('class', 'miss hidden');
-      } else if (node.getAttribute('class') === '1') {
-        node.setAttribute('class', 'hit hidden');
+    let gameSquare;
+    this.board.cellsInBoard.forEach((cell, idx) => {
+      gameSquare = document.createElement('div');
+      gameSquare.setAttribute('id', `game-cell-${idx}`);
+      gameSquare.setAttribute('class', 'cell');
+
+      if (cell.isExplosion()) {
+        gameSquare.setAttribute('class', 'hit cell');
+      } else if (cell.isSplash()) {
+        gameSquare.setAttribute('class', 'miss cell');
+      } else {
+        gameSquare.setAttribute('class', 'hidden cell');
       }
-      // this.setCellClickEventHandler(node);
-      gameBoard.appendChild(node);
+
+      this.setCellClickEventHandler(gameSquare, cell);
+      gameBoard.appendChild(gameSquare);
     });
+
     this.el.appendChild(gameBoard);
+  }
+
+  setCellClickEventHandler(gameSquare, cell) {
+    gameSquare.addEventListener('click', (e) => {
+      cell.play();
+      this.render();
+    });
   }
 
 }
@@ -53,7 +56,7 @@ class BoardView {
 
 //  very similar to GOL... as in a grid of cells
 //  ALL cells should be ... light grey..
-//  cell should be red if gameStateArray has a 1 there
+//  cell should be red if someCells has a 1 there
 
 
 // first step: make something appear on the page. anything. start with a word.

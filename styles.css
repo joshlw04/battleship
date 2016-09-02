@@ -39,7 +39,7 @@ div {
   background-color: lightgreen;
 }
 
-#game-cell {
+.cell {
   height: 16%;
   width: 16%;
   display: inline-block;

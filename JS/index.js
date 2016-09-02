@@ -1,5 +1,5 @@
 
-const board = new Board();
+const board = new Board(2, 2);
 const domBoard = document.querySelector('div.board');
 const boardView = new BoardView(domBoard, board);
 boardView.render();
