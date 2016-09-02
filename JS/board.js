@@ -27,21 +27,23 @@ class Board {
   }
 
   isGameOver() {
-    let gameOver;
-    for (let i = 0; i < this.cellsInBoard.length; i++) { // loop over all cells in the gameBoard
-      if (this.cellsInBoard[i].hasBoat === true) {
-        if (this.cellsInBoard[i].beenPlayed && this.cellsInBoard[i].isExplosion) { // if the cell has been played and has been exploded...
-          gameOver = true;
-        }
-      } else {
-        gameOver = false;
+    const allBoats = [];
+    this.cellsInBoard.forEach(function(cell) {
+      if (cell.hasBoat === true) {
+        allBoats.push(cell.beenPlayed);
       }
+    });
+    if (allBoats.includes(false)) {
+      return false;
+    } else {
+      return true;
     }
-    return gameOver;
   }
-
   alertWinner() {
     // this will tell the player that they have found all the ships
+    if (isGameOver === true) {
+      console.log("winner");
+    }
   }
   /*    in this fucntion... check if ALL Cells WITH a boat... have exploded..
   Looping over ALL the cells... the cellsInBoard array, which has all the new Cell objects
@@ -49,10 +51,6 @@ class Board {
       if is does... has it been played?
     If not... return false... cause the game istn' over
     return true
-
-so, isExplosion and beenPlayed are in the cell class. what is the way to get
-from the Board class into the cell class? I know i'm supposed to only think of one tiny
-world at a time. index number?
   */
   }
 
