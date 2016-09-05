@@ -1,5 +1,7 @@
 # Battleship!
 
+![Alt text](images/Battleship.png)
+
 Currently, a one-player game, testing your abilities to hunt and sink ships of various sizes before you run out of missles! Future updates will include a two-player mode, scoring, and more!
 
 ## Code structure
