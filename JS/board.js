@@ -2,17 +2,18 @@
   Params:
     width, height
   Interfaces:
+    buildBoard -> builds board based on random cell placement
+                  future version will include random ship placement
     guess(cellId) -> play cell
     isGameOver -> checks to see if the boat cells have been exploded
-                 -> returns true/false
+               -> returns true/false
 */
 
 class Board {
-  constructor(width, height) {  // <-   WHEN I CALL new Board...
+  constructor(width, height) {
     this.numCells = width * height;
-    this.cellsInBoard = this.buildBoard(); // Array of new Cell
+    this.cellsInBoard = this.buildBoard();
   }
-
 
   buildBoard() {
     const cells = [];
@@ -31,7 +32,7 @@ class Board {
 
   isGameOver() {
     const allBoats = [];
-    this.cellsInBoard.forEach((cell) => { //cell is a var name for each item in cellsInBoard
+    this.cellsInBoard.forEach((cell) => {
       if (cell.hasBoat === true) {
         allBoats.push(cell.beenPlayed);
       }

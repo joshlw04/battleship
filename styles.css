@@ -3,40 +3,28 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
-  height: 30rem;
+  height: 100%;
   font-family: 'Share Tech Mono', monospace;
 }
 
-
-.hit {
-  background-image: url('images/explosion.gif');
-  background-size: 7rem 7rem;
-}
-
-.miss {
-  background-image: url('images/splash.png');
-  background-size: 7rem 7rem;
-}
-
-.hidden {
-  background-image: none;
-}
-
-/*.addShip {
-  background-color: red;
-}
-*/
-/*div {
-  height: 5rem;
-  width: 5rem;
-  border: 1px solid black;
+h1 {
+  font-size: 10rem;
+  color: rgba(98, 230, 96, 1);
   text-align: center;
-  display: inline-block;
-}*/
+  margin: 0 auto;
+}
+
+h2 {
+  height: 5rem;
+  margin: 3rem auto;
+  font-size: 8rem;
+  color: rgba(98, 230, 96, 1);
+  text-align: center;
+}
 
 .message {
   width: 15rem;
-  height: 5rem;
+  height: 3rem;
   display: inline;
 }
 
@@ -51,7 +39,7 @@ body {
 #game-board {
   height: 45rem;
   width: 45rem;
-  background-color: rgba(98, 230, 96, 0.75);
+  background-color: rgba(98, 230, 96, 0.5);
   margin: 0 auto;
 }
 
@@ -59,9 +47,52 @@ body {
   height: 16%;
   width: 16%;
   display: inline-block;
-  position: relative;
+  /*position: relative;*/
   text-align: center;
   border: 1px solid black;
   padding: 0;
+  font-size: 5rem;
+}
+
+.hit {
+  background-image: url('images/explosion.gif');
+  background-size: 7rem 7rem;
+  font-size: 5rem;
+}
+
+.miss {
+  background-image: url('images/splash.png');
+  background-size: 7rem 7rem;
+  font-size: 5rem;
+}
+
+.hidden {
+  background-image: none;
+}
+
+#message {
+  margin: 0 auto;
+  height: 5rem;
+  position: relative;
+  top: 45rem;
+  text-align: center;
+}
+
+#guess-input {
+  width: 20%;
+  height: 5rem;
+  /*position: relative;*/
+  display: inline-block;
+  margin: 0 auto;
+  /*left: */
+  font-size: 5rem;
+}
+
+#submit {
+  width: 20%;
+  height: 5rem;
+  display: inline-block;
+  /*position: relative;*/
+  margin: 0 auto;
   font-size: 5rem;
 }
