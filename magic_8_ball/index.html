@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css" media="screen" title="no title">
+    <link href="https://fonts.googleapis.com/css?family=Assistant" rel="stylesheet">
+    <title>Magic 8 Ball</title>
+  </head>
+  <body>
+    <header>
+      <h1>What is your question?</h1>
+      <h2 id="question-display"></h2>
+    </header>
+    <div id="ball">
+      <div id="window">
+        <div id="triangle">
+        </div>
+      </div>
+    </div>
+    <br/>
+    <input type="text" name="question" id="question">
+    <input type="submit" value="Ask the Magic 8 Ball!" id="submit">
+
+    <script src="js/game-data.js"></script>
+    <script src="js/game-view.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>

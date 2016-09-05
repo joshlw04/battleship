@@ -36,3 +36,6 @@ Three class constructors:
 
 ## Authors
         - Josh Whitney www.github.com/joshlw04
+
+#PS :
+I've also created a Magic 8 Ball 'game', which I'm adding to my Battleship directory. I made it to help me practice, and I think it looks good enough to add here. It was relatively easy, but it helped me practice making classes and tying them together. 
