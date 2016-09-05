@@ -5,6 +5,7 @@
     // play() -> marks cell as played
     // isExplosion() -> return true or false... based on IF the cell has an explosion
     // isSplash() -> return ture or false... based on IF the cell has splashed
+
 class Cell {
   constructor(boatOrNot) {
     this.hasBoat = boatOrNot;  // is that spot a boat

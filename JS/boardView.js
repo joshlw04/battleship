@@ -11,23 +11,15 @@ class BoardView {
     gameBoard.setAttribute('id', 'game-board');
 
     let gameSquare;
-    this.board.cellsInBoard.forEach((cell, idx) => {
-      gameSquare = document.createElement('div');
-      gameSquare.setAttribute('id', `game-cell-${idx}`);
-      gameSquare.setAttribute('class', 'cell');
-
-      if (cell.isExplosion()) {
-        gameSquare.setAttribute('class', 'hit cell');
-      } else if (cell.isSplash()) {
-        gameSquare.setAttribute('class', 'miss cell');
-      } else {
-        gameSquare.setAttribute('class', 'hidden cell');
-      }
-
-      this.setCellClickEventHandler(gameSquare, cell);
+    // forEach interation in the array...
+    this.board.cellsInBoard.forEach((cell, idx) => { // forEach can take an iterator var as well as an index var
+      gameSquare = document.createElement('div'); // create a div
+      gameSquare.setAttribute('id', `game-cell-${idx}`); // set the id with an index value
+      gameSquare.setAttribute('class', 'cell'); // set the class name
+      gameSquare.innerHTML = idx;
+      gameSquare.setAttribute('class', 'hidden cell');
       gameBoard.appendChild(gameSquare);
     });
-
     this.el.appendChild(gameBoard);
   }
 
@@ -37,7 +29,6 @@ class BoardView {
       this.render();
     });
   }
-
 }
 
 // const newBoard = new BoardView(document.createElement('game-container'));
