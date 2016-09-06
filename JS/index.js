@@ -12,12 +12,12 @@ document.getElementById('submit').addEventListener('click', function() {
     console.log('running displayGameOver');
     if (board.cellsInBoard[guess].hasBoat === true) {
       boatHit.setAttribute('class', 'hit cell');
-      boatHit.innerHTML = 'H'; // TODO: why can't I clear the innerHTML of this without it freaking out?
+      boatHit.innerHTML = '&nbsp;';
       document.getElementById('guess-input').value = '';
       document.querySelector('#shots-fired').innerHTML = 'You got a hit!';
     } else {
       boatHit.setAttribute('class', 'miss cell');
-      boatHit.innerHTML = 'M';
+      boatHit.innerHTML = '&nbsp;';
       document.getElementById('guess-input').value = ''; // TODO why can't i say guess here? its the same thing...
       document.querySelector('#shots-fired').innerHTML = 'You missed!';
     }
